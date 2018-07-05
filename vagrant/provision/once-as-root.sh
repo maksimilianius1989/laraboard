@@ -107,8 +107,8 @@ ln -s /app/vagrant/nginx/app.conf /etc/nginx/sites-enabled/app.conf
 echo "Done!"
 
 info "Initailize databases for MySQL"
-mysql -uroot <<< "CREATE DATABASE homestead"
-mysql -uroot <<< "CREATE DATABASE homestead_test"
+mysql -uroot <<< "CREATE DATABASE laraless"
+mysql -uroot <<< "CREATE DATABASE hlaraless_test"
 echo "Done!"
 
 info "Enabling supervisor processes"
@@ -117,3 +117,10 @@ echo "Done!"
 
 info "Install composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+info "Install npm and nodejs"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+info "Install yarn"
+npm install -g yarn
