@@ -6,6 +6,6 @@
         <a href="{{route('admin.regions.index')}}" class="nav-link">Regions</a>
     </li>
     <li class="nav-item">
-        <a href="{{route('admin.regions.index')}}" class="nav-link">Users</a>
+        <a href="{{route('admin.users.index')}}" class="nav-link">Users</a>
     </li>
 </ul>
