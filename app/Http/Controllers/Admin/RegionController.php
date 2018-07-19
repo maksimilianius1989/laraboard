@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Http\Controllers\Admin;
-
 
 use App\Entity\Region;
 use App\Http\Controllers\Controller;
@@ -31,12 +29,12 @@ class RegionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:255|unique:regions,name,NULL,id,parent_id,'. ($request['parent'] ?: 'NULL'),
-            'slug' => 'required|string|max:255|unique:regions,slug,NULL,id,parent_id,'. ($request['parent'] ?: 'NULL'),
+            'name' => 'required|string|max:255|unique:regions,name,NULL,id,parent_id,' . ($request['parent'] ?: 'NULL'),
+            'slug' => 'required|string|max:255|unique:regions,slug,NULL,id,parent_id,' . ($request['parent'] ?: 'NULL'),
             'parent' => 'optional|exists:regions,id',
         ]);
 
-        $region = Region::created([
+        $region = Region::create([
             'name' => $request['name'],
             'slug' => $request['slug'],
             'parent_id' => $request['parent'],
@@ -60,8 +58,8 @@ class RegionController extends Controller
     public function update(Request $request, Region $region)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:255|unique:regions,name,'. $region->id . ',id,parent_id,'. $region->parent_id,
-            'slug' => 'required|string|max:255|unique:regions,slug,'. $region->id . ',id,parent_id,' . $region->parent_id,
+            'name' => 'required|string|max:255|unique:regions,name,' . $region->id . ',id,parent_id,' . $region->parent_id,
+            'slug' => 'required|string|max:255|unique:regions,slug,' . $region->id . ',id,parent_id,' . $region->parent_id,
         ]);
 
         $region->update([

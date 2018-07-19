@@ -13,9 +13,9 @@ class UsersController extends Controller
 {
     private $register;
 
-    public function __construct(RegisterService $registerService)
+    public function __construct(RegisterService $register)
     {
-        $this->register = $registerService;
+        $this->register = $register;
     }
 
     public function index(Request $request)
@@ -34,11 +34,9 @@ class UsersController extends Controller
             $query->where('email', 'like', '%' . $value . '%');
         }
 
-
         if (!empty($value = $request->get('status'))) {
             $query->where('status', $value);
         }
-
 
         if (!empty($value = $request->get('role'))) {
             $query->where('role', $value);

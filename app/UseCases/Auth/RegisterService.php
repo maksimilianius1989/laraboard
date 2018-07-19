@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\UseCases\Auth;
-
 
 use App\Entity\User;
 use App\Http\Requests\Auth\RegisterRequest;
@@ -36,6 +34,7 @@ class RegisterService
 
     public function verify($id): void
     {
+        /** @var User $user */
         $user = User::findOrFail($id);
         $user->verify();
     }

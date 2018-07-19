@@ -6,11 +6,13 @@
     </tr>
     </thead>
     <tbody>
-        @foreach($regions as $region)
-            <tr>
-                <td><a href="{{route('admin.regions.show', $region)}}">{{$region->name}}</a></td>
-                <td>{{$region->slug}}</td>
-            </tr>
-        @endforeach
+
+    @foreach ($regions as $region)
+        <tr>
+            <td><a href="{{ route('admin.regions.show', $region) }}">{{ $region->name }}</a></td>
+            <td>{{ $region->slug }}</td>
+        </tr>
+    @endforeach
+
     </tbody>
 </table>

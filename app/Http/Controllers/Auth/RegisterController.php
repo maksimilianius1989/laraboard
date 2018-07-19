@@ -3,21 +3,18 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Requests\Auth\RegisterRequest;
-use App\Mail\Auth\VerifyMail;
 use App\Entity\User;
 use App\Http\Controllers\Controller;
 use App\UseCases\Auth\RegisterService;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
     private $service;
 
-    public function __construct(RegisterService $registerService)
+    public function __construct(RegisterService $service)
     {
         $this->middleware('guest');
-        $this->service = $registerService;
+        $this->service = $service;
     }
 
     public function showRegistrationForm()
@@ -27,10 +24,7 @@ class RegisterController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $user = $this->service->register($request);
-
-        Mail::to($user->email)->send(new VerifyMail($user));
-        event(new Registered($user));
+        $this->service->register($request);
 
         return redirect()->route('login')
             ->with('success', 'Check your email and click on the link to verify.');

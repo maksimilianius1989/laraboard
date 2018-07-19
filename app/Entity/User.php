@@ -2,11 +2,9 @@
 
 namespace App\Entity;
 
-use DomainException;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
-use InvalidArgumentException;
 
 /**
  * @property int $id
@@ -28,7 +26,7 @@ class User extends Authenticatable
     public const ROLE_ADMIN = 'admin';
 
     protected $fillable = [
-        'name', 'email', 'password', 'status', 'verify_token', 'role',
+        'name', 'email', 'password', 'verify_token', 'status', 'role',
     ];
 
     protected $hidden = [
@@ -58,6 +56,11 @@ class User extends Authenticatable
         ]);
     }
 
+    public function isWait(): bool
+    {
+        return $this->status === self::STATUS_WAIT;
+    }
+
     public function isActive(): bool
     {
         return $this->status === self::STATUS_ACTIVE;
@@ -66,7 +69,7 @@ class User extends Authenticatable
     public function verify(): void
     {
         if (!$this->isWait()) {
-            throw new DomainException('User is already verified.');
+            throw new \DomainException('User is already verified.');
         }
 
         $this->update([
@@ -75,18 +78,13 @@ class User extends Authenticatable
         ]);
     }
 
-    public function isWait(): bool
-    {
-        return $this->status === self::STATUS_WAIT;
-    }
-
     public function changeRole($role): void
     {
-        if (!in_array($role, [self::ROLE_USER, self::ROLE_ADMIN], true)) {
-            throw new InvalidArgumentException('Undefined role "' . $role . '"');
+        if (!\in_array($role, [self::ROLE_USER, self::ROLE_ADMIN], true)) {
+            throw new \InvalidArgumentException('Undefined role "' . $role . '"');
         }
         if ($this->role === $role) {
-            throw new DomainException('Role is already assigned.');
+            throw new \DomainException('Role is already assigned.');
         }
         $this->update(['role' => $role]);
     }

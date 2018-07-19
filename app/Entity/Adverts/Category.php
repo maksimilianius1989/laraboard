@@ -15,7 +15,6 @@ use Kalnoy\Nestedset\NodeTrait;
  * @property Category $parent
  * @property Category[] $children
  */
-
 class Category extends Model
 {
     use NodeTrait;

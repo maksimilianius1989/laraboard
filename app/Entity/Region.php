@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Entity;
 
 use Illuminate\Database\Eloquent\Model;
@@ -14,11 +13,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property Region $parent
  * @property Region[] $children
  */
-
 class Region extends Model
 {
     protected $fillable = ['name', 'slug', 'parent_id'];
-    public $timestamps = false;
 
     public function parent()
     {

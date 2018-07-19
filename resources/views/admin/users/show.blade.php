@@ -44,13 +44,13 @@
         </tr>
         <tr>
             <th>Role</th>
-            <th>
+            <td>
                 @if ($user->isAdmin())
                     <span class="badge badge-danger">Admin</span>
                 @else
-                    <span class="badge badge-secondery">User</span>
+                    <span class="badge badge-secondary">User</span>
                 @endif
-            </th>
+            </td>
         </tr>
         <tbody>
         </tbody>
