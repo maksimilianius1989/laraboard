@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('admin.advents.categories._nav')
+    @include('admin.adverts.categories._nav')
 
-    <form action="{{route('admin.adverts.categories.store')}}" method="POST">
+    <form action="{{route('admin.adverts.categories.update', $category)}}" method="POST">
         @csrf
+        @method('PUT')
 
         <div class="form-group">
             <label for="name" class="col-form-label">Name</label>
-            <input type="text" id="name" class="form-control{{$errors->has('name') ? ' is-invalid' : ''}}" name="name" value="{{old('name')}}" required>
+            <input type="text" id="name" class="form-control{{$errors->has('name') ? ' is-invalid' : ''}}" name="name" value="{{old('name', $category->name)}}" required>
             @if($errros->has('name'))
                 <span class="invalid-feedback"><strong>{{$errros->first('name')}}</strong></span>
             @endif
@@ -16,7 +17,7 @@
 
         <div class="form-group">
             <label for="slug" class="col-form-label">Slug</label>
-            <input type="text" id="slug" class="form-control{{$errors->has('slug') ? ' is-invalid' : ''}}" name="slug" value="{{old('slug')}}" required>
+            <input type="text" id="slug" class="form-control{{$errors->has('slug') ? ' is-invalid' : ''}}" name="slug" value="{{old('slug', $category->slug)}}" required>
             @if($errors->has('slug'))
                 <span class="invalid-feedback"><strong>{{$errors->first('slug')}}</strong></span>
             @endif
@@ -27,9 +28,9 @@
             <select name="parent" id="parent" class="form-control{{$errors->has('parent') ? ' is-invalid' : ''}}">
                 <option value=""></option>
                 @foreach($parents as $parent)
-                    <option value="{{$parent->id}}"{{$parent->id == old('parent') ? ' selected' : ''}}>
+                    <option value="{{$parent->id}}"{{$parent->id == old('parent', $category->parent_id) ? ' selected' : ''}}>
                         @for($i = 0; $i < $parent->depth; $i++) &mdash; @endfor
-                            {{$parent->name}}
+                        {{$parent->name}}
                     </option>
                 @endforeach
             </select>

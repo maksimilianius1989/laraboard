@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('admin.advents.categories._nav')
+    @include('admin.adverts.categories._nav')
 
     <div class="d-flex flex-row mb-3">
         <a href="{{route('admin.adverts.categories.edit', $category)}}" class="btn btn-primary mr-1">Edit</a>

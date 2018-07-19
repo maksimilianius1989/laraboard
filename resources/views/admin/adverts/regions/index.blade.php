@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('admin.advents.categories._nav')
+    @include('admin.adverts.categories._nav')
 
     <p><a href="{{route('admin.adverts.categories.create')}}" class="btn btn-success">Add Category</a></p>
 
