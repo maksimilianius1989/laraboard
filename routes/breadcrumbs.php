@@ -111,3 +111,4 @@ Breadcrumbs::register('admin.adverts.categories.edit', function (Crumbs $crumbs,
     $crumbs->parent('admin.adverts.categories.show', $region);
     $crumbs->push('Edit', route('admin.adverts.categories.edit', $region));
 });
+
