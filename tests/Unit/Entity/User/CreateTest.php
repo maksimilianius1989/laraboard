@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Tests\Unit\Entity\User;
-
 
 use App\Entity\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;

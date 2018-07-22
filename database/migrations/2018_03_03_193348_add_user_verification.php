@@ -18,7 +18,9 @@ class AddUserVerification extends Migration
             $table->string('verify_token')->nullable()->unique();
         });
 
-        DB::table('users')->update(['status' => 'active']);
+        DB::table('users')->update([
+            'status' => 'active',
+        ]);
     }
 
     /**
@@ -30,7 +32,7 @@ class AddUserVerification extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('status');
-            $table->dropColumn('verify_taken');
+            $table->dropColumn('verify_token');
         });
     }
 }

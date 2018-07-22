@@ -18,9 +18,9 @@ class CreateRegionsTable extends Migration
             $table->string('name')->index();
             $table->string('slug');
             $table->integer('parent_id')->nullable()->references('id')->on('regions')->onDelete('CASCADE');
+            $table->timestamps();
             $table->unique(['parent_id', 'slug']);
             $table->unique(['parent_id', 'name']);
-            $table->timestamps();
         });
     }
 

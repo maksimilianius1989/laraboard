@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Tests\Unit\Entity\User;
-
 
 use App\Entity\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -14,7 +12,7 @@ class RoleTest extends TestCase
 
     public function testChange(): void
     {
-        $user = factory(User::class)->create(['role' =>User::ROLE_USER]);
+        $user = factory(User::class)->create(['role' => User::ROLE_USER]);
 
         self::assertFalse($user->isAdmin());
 
@@ -23,7 +21,7 @@ class RoleTest extends TestCase
         self::assertTrue($user->isAdmin());
     }
 
-    public function testAlredy(): void
+    public function testAlready(): void
     {
         $user = factory(User::class)->create(['role' => User::ROLE_ADMIN]);
 

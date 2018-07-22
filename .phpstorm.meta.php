@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-07-18 19:47:42.
+    * Generated on 2018-07-22 09:07:42.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -41,6 +41,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -145,8 +146,6 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
-        'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
-        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
@@ -181,6 +180,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -285,8 +285,6 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
-        'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
-        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
@@ -321,6 +319,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -425,8 +424,6 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
-        'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
-        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
     override(\App::make(0), map([
         '' => '@',
@@ -461,6 +458,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -565,8 +563,6 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
-        'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
-        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
@@ -601,6 +597,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -705,8 +702,6 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
-        'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
-        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
     override(\app(0), map([
         '' => '@',
@@ -741,6 +736,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -845,8 +841,6 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
-        'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
-        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
     override(\resolve(0), map([
         '' => '@',
@@ -881,6 +875,7 @@ namespace PHPSTORM_META {
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -985,8 +980,6 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
-        'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
-        'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
 
     override(\Illuminate\Support\Arr::add(0), type(0));
