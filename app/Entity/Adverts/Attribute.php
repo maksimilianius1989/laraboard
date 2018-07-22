@@ -4,7 +4,6 @@ namespace App\Entity\Adverts;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 /**
  * @property int $id
  * @property int $category_id
@@ -15,7 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property array $variants
  * @property integer $sort
  */
-
 class Attribute extends Model
 {
     public const TYPE_STRING = 'string';
@@ -32,7 +30,7 @@ class Attribute extends Model
         'variants' => 'array',
     ];
 
-    public static function typeList(): array
+    public static function typesList(): array
     {
         return [
             self::TYPE_STRING => 'String',

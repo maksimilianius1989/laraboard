@@ -4,35 +4,24 @@ namespace App\Http\Controllers\Admin\Adverts;
 
 use App\Entity\Adverts\Attribute;
 use App\Entity\Adverts\Category;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 class AttributeController extends Controller
 {
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Category $category)
     {
-        $types = Attribute::typeList();
+        $types = Attribute::typesList();
 
         return view('admin.adverts.categories.attributes.create', compact('category', 'types'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request, Category $category)
     {
         $this->validate($request, [
             'name' => 'required|string|max:255',
-            'type' => ['required', 'string', 'max:255', Rule::in(array_keys(Attribute::typeList()))],
+            'type' => ['required', 'string', 'max:255', Rule::in(array_keys(Attribute::typesList()))],
             'required' => 'nullable|string|max:255',
             'variants' => 'nullable|string',
             'sort' => 'required|integer',
@@ -49,42 +38,23 @@ class AttributeController extends Controller
         return redirect()->route('admin.adverts.categories.attributes.show', [$category, $attribute]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show(Category $category, Attribute $attribute)
     {
         return view('admin.adverts.categories.attributes.show', compact('category', 'attribute'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Category $category, Attribute $attribute)
     {
-        $types = Attribute::typeList();
+        $types = Attribute::typesList();
 
         return view('admin.adverts.categories.attributes.edit', compact('category', 'attribute', 'types'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Category $category, Attribute $attribute)
     {
         $this->validate($request, [
             'name' => 'required|string|max:255',
-            'type' => ['required', 'string', 'max:255', Rule::in(array_keys(Attribute::typeList()))],
+            'type' => ['required', 'string', 'max:255', Rule::in(array_keys(Attribute::typesList()))],
             'required' => 'nullable|string|max:255',
             'variants' => 'nullable|string',
             'sort' => 'required|integer',
@@ -101,16 +71,10 @@ class AttributeController extends Controller
         return redirect()->route('admin.adverts.categories.show', $category);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Category $category)
     {
         $category->delete();
 
-        return redirect()->route('admin.adverts.categories.view', $category);
+        return redirect()->route('admin.adverts.categories.show', $category);
     }
 }
