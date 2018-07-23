@@ -32,6 +32,6 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user->update($request->only('name', 'last_name'));
 
-        return redirect()->route('cabinet.profile.name');
+        return redirect()->route('cabinet.profile.home');
     }
 }

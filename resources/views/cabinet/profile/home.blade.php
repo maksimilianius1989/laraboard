@@ -10,16 +10,13 @@
     <table class="table table-bordered">
         <tbody>
         <tr>
-            <th>First Name</th>
-            <td>{{ $user->name }}</td>
+            <th>First Name</th><td>{{ $user->name }}</td>
         </tr>
         <tr>
-            <th>Last Name</th>
-            <td>{{ $user->last_name }}</td>
+            <th>Last Name</th><td>{{ $user->last_name }}</td>
         </tr>
         <tr>
-            <th>Email</th>
-            <td>{{ $user->email }}</td>
+            <th>Email</th><td>{{ $user->email }}</td>
         </tr>
         </tbody>
     </table>

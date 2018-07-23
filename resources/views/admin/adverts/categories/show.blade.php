@@ -42,7 +42,7 @@
 
         <tr><th colspan="4">Parent attributes</th></tr>
 
-        @forelse($parentAttributes as $attribute)
+        @forelse ($parentAttributes as $attribute)
             <tr>
                 <td>{{ $attribute->sort }}</td>
                 <td>{{ $attribute->name }}</td>
@@ -50,12 +50,10 @@
                 <td>{{ $attribute->required ? 'Yes' : '' }}</td>
             </tr>
         @empty
-            <tr>
-                <td colspan="4">None</td>
-            </tr>
+            <tr><td colspan="4">None</td></tr>
         @endforelse
 
-        <tr><th colspan="4">None</th></tr>
+        <tr><th colspan="4">Own attributes</th></tr>
 
         @forelse ($attributes as $attribute)
             <tr>

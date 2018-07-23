@@ -23,7 +23,7 @@ Route::get('/verify/{token}', 'Auth\RegisterController@verify')->name('register.
 Route::group(
     [
         'prefix' => 'cabinet',
-        'as' => 'cabinet',
+        'as' => 'cabinet.',
         'namespace' => 'Cabinet',
         'middleware' => ['auth'],
     ],
@@ -31,7 +31,7 @@ Route::group(
         Route::get('/', 'HomeController@index')->name('home');
         Route::get('/profile', 'ProfileController@index')->name('profile.home');
         Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
-        Route::get('/profile/update', 'ProfileController@update')->name('profile.update');
+        Route::put('/profile/update', 'ProfileController@update')->name('profile.update');
     }
 );
 
