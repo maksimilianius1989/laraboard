@@ -44,13 +44,12 @@ Breadcrumbs::register('cabinet.profile.home', function (Crumbs $crumbs) {
 
 Breadcrumbs::register('cabinet.profile.edit', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.profile.home');
-    $crumbs->push('Phone', route('cabinet.profile.phone'));
+    $crumbs->push('Edit', route('cabinet.profile.edit'));
 });
-
 
 Breadcrumbs::register('cabinet.profile.phone', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.profile.home');
-    $crumbs->push('Edit', route('cabinet.profile.edit'));
+    $crumbs->push('Phone', route('cabinet.profile.phone'));
 });
 
 // Admin

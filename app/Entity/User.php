@@ -32,7 +32,7 @@ class User extends Authenticatable
     public const ROLE_ADMIN = 'admin';
 
     protected $fillable = [
-        'name', 'last_name', 'email', 'phone' ,'password', 'verify_token', 'status', 'role',
+        'name', 'last_name', 'email', 'phone', 'password', 'verify_token', 'status', 'role',
     ];
 
     protected $hidden = [

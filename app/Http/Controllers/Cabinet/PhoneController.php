@@ -1,13 +1,11 @@
 <?php
 
-
 namespace App\Http\Controllers\Cabinet;
-
 
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PhoneController extends Controller
 {
@@ -17,8 +15,8 @@ class PhoneController extends Controller
 
         try {
             $token = $user->requestPhoneVerification(Carbon::now());
-        } catch (\DomainException $exception) {
-            $request->session()->flash('error', $exception->getMessage());
+        } catch (\DomainException $e) {
+            $request->session()->flash('error', $e->getMessage());
         }
 
         return redirect()->route('cabinet.profile.phone');
@@ -41,8 +39,8 @@ class PhoneController extends Controller
 
         try {
             $user->verifyPhone($request['token'], Carbon::now());
-        } catch (\DomainException $exception) {
-            return redirect()->route('cabinet.profile.phone')->with('error', $exception->getMessage());
+        } catch (\DomainException $e) {
+            return redirect()->route('cabinet.profile.phone')->with('error', $e->getMessage());
         }
 
         return redirect()->route('cabinet.profile.home');
