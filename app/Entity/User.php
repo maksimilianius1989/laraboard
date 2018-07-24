@@ -166,7 +166,7 @@ class User extends Authenticatable
         return $this->phone_verified;
     }
 
-    public function isPhoneAuthEnable(): bool
+    public function isPhoneAuthEnabled(): bool
     {
         return (bool)$this->phone_auth;
     }

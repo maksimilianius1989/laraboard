@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Entity\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Entity\User;
 use App\Services\Sms\SmsSender;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
@@ -49,8 +49,8 @@ class LoginController extends Controller
                 Auth::logout();
                 return back()->with('error', 'You need to confirm your account. Please check your email.');
             }
-            if ($user->isPhoneVerified()) {
-                Auth::Logout();
+            if ($user->isPhoneAuthEnabled()) {
+                Auth::logout();
                 $token = (string)random_int(10000, 99999);
                 $request->session()->put('auth', [
                     'id' => $user->id,
@@ -85,12 +85,10 @@ class LoginController extends Controller
         ]);
 
         if (!$session = $request->session()->get('auth')) {
-            throw new BadRequestHttpException('Missiog token info.');
+            throw new BadRequestHttpException('Missing token info.');
         }
 
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = User::findOrFail($session['id']);
 
         if ($request['token'] === $session['token']) {

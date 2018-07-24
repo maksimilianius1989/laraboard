@@ -5,8 +5,8 @@ namespace App\Providers;
 use App\Services\Sms\ArraySender;
 use App\Services\Sms\SmsRu;
 use App\Services\Sms\SmsSender;
-use Barryvdh\Debugbar\ServiceProvider;
-use PharIo\Manifest\Application;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 class SmsServiceProvider extends ServiceProvider
 {
@@ -19,13 +19,13 @@ class SmsServiceProvider extends ServiceProvider
                 case 'sms.ru':
                     $params = $config['drivers']['sms.ru'];
                     if (!empty($params['url'])) {
-                        return new SmsRu($params['app_id'],  $params['url']);
+                        return new SmsRu($params['app_id'], $params['url']);
                     }
                     return new SmsRu($params['app_id']);
                 case 'array':
                     return new ArraySender();
                 default:
-                    throw new \InvalidArgumentException('Undefined SMS driver' . $config['driver']);
+                    throw new \InvalidArgumentException('Undefined SMS driver ' . $config['driver']);
             }
         });
     }
