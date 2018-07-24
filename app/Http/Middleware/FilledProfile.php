@@ -10,7 +10,7 @@ class FilledProfile
     {
         $user = Auth::user();
 
-        if (!$user->hasFilladProfile()) {
+        if (!$user->hasFilledProfile()) {
             return redirect()
                 ->route('cabinet.profile.home')
                 ->with('error', 'Please fill your profile and verify your phone.');
