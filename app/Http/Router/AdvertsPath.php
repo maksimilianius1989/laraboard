@@ -12,7 +12,6 @@ class AdvertsPath implements UrlRoutable
      * @var Region
      */
     public $region;
-
     /**
      * @var Category
      */
@@ -25,7 +24,7 @@ class AdvertsPath implements UrlRoutable
         return $clone;
     }
 
-    public function withCategory(Category $category): self
+    public function withCategory(?Category $category): self
     {
         $clone = clone $this;
         $clone->category = $category;
@@ -47,7 +46,7 @@ class AdvertsPath implements UrlRoutable
         return implode('/', $segments);
     }
 
-    public function getRouteKeyName()
+    public function getRouteKeyName(): string
     {
         return 'adverts_path';
     }
@@ -56,9 +55,7 @@ class AdvertsPath implements UrlRoutable
     {
         $chunks = explode('/', $value);
 
-        /**
-         * @var Region|null $region
-         */
+        /** @var Region|null $region */
         $region = null;
         do {
             $slug = reset($chunks);
@@ -68,13 +65,11 @@ class AdvertsPath implements UrlRoutable
             }
         } while (!empty($slug) && !empty($next));
 
-        /**
-         * @var Category|null $category
-         */
+        /** @var Category|null $category */
         $category = null;
         do {
             $slug = reset($chunks);
-            if ($slug && $next = Category::where('slug', $slug)->where('parent_id', $region ? $this->category->id : null)->first()) {
+            if ($slug && $next = Category::where('slug', $slug)->where('parent_id', $category ? $category->id : null)->first()) {
                 $category = $next;
                 array_shift($chunks);
             }
@@ -89,18 +84,3 @@ class AdvertsPath implements UrlRoutable
             ->withCategory($category);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
