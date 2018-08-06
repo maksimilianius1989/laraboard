@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Tests\Feature\Auth;
-
 
 use App\Entity\User;
 use Illuminate\Support\Str;

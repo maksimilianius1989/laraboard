@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Tests\Unit\Entity\User;
-
 
 use App\Entity\User;
 use Carbon\Carbon;
@@ -26,9 +24,7 @@ class PhoneTest extends TestCase
 
     public function testRequestEmptyPhone(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
             'phone' => null,
             'phone_verified' => false,
@@ -41,11 +37,9 @@ class PhoneTest extends TestCase
 
     public function testRequest(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
-            'phone' => '700000000000',
+            'phone' => '79000000000',
             'phone_verified' => false,
             'phone_verify_token' => null,
         ]);
@@ -58,11 +52,9 @@ class PhoneTest extends TestCase
 
     public function testRequestWithOldPhone(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
-            'phone' => '700000000000',
+            'phone' => '79000000000',
             'phone_verified' => true,
             'phone_verify_token' => null,
         ]);
@@ -77,11 +69,9 @@ class PhoneTest extends TestCase
 
     public function testRequestAlreadySentTimeout(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
-            'phone' => '700000000000',
+            'phone' => '79000000000',
             'phone_verified' => true,
             'phone_verify_token' => null,
         ]);
@@ -94,11 +84,9 @@ class PhoneTest extends TestCase
 
     public function testRequestAlreadySent(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
-            'phone' => '700000000000',
+            'phone' => '79000000000',
             'phone_verified' => true,
             'phone_verify_token' => null,
         ]);
@@ -111,11 +99,9 @@ class PhoneTest extends TestCase
 
     public function testVerify(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
-            'phone' => '700000000000',
+            'phone' => '79000000000',
             'phone_verified' => false,
             'phone_verify_token' => $token = 'token',
             'phone_verify_token_expire' => $now = Carbon::now(),
@@ -130,11 +116,9 @@ class PhoneTest extends TestCase
 
     public function testVerifyIncorrectToken(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
-            'phone' => '700000000000',
+            'phone' => '79000000000',
             'phone_verified' => false,
             'phone_verify_token' => 'token',
             'phone_verify_token_expire' => $now = Carbon::now(),
@@ -144,13 +128,11 @@ class PhoneTest extends TestCase
         $user->verifyPhone('other_token', $now->copy()->subSeconds(15));
     }
 
-    public function testVerityExpiredToken(): void
+    public function testVerifyExpiredToken(): void
     {
-        /**
-         * @var User $user
-         */
+        /** @var User $user */
         $user = factory(User::class)->create([
-            'phone' => '700000000000',
+            'phone' => '79000000000',
             'phone_verified' => false,
             'phone_verify_token' => $token = 'token',
             'phone_verify_token_expire' => $now = Carbon::now(),
