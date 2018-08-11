@@ -1,1 +1,1 @@
-@include('admin._nav', ['page' => 'adverts'])
+@include ('admin._nav', ['page' => 'adverts'])

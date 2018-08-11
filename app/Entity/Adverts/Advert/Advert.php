@@ -196,7 +196,7 @@ class Advert extends Model
 
     public function scopeFavoredByUser(Builder $query, User $user)
     {
-        return $query->whereHas('favorites', function (Builder $query) use ($user) {
+        return $query->whereHas('favorites', function(Builder $query) use ($user) {
             $query->where('user_id', $user->id);
         });
     }

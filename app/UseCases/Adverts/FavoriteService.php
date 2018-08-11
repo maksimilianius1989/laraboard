@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\UseCases\Adverts;
-
 
 use App\Entity\Adverts\Advert\Advert;
 use App\Entity\User;

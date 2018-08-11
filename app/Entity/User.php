@@ -172,7 +172,6 @@ class User extends Authenticatable
         if ($this->hasInFavorites($id)) {
             throw new \DomainException('This advert is already added to favorites.');
         }
-
         $this->favorites()->attach($id);
     }
 
@@ -213,6 +212,6 @@ class User extends Authenticatable
 
     public function favorites()
     {
-        return $this->belongsTo(Advert::class, 'advert_favorites', 'user_id', 'advert_id');
+        return $this->belongsToMany(Advert::class, 'advert_favorites', 'user_id', 'advert_id');
     }
 }

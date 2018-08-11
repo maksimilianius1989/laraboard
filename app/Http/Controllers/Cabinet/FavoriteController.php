@@ -1,18 +1,17 @@
 <?php
 
-
 namespace App\Http\Controllers\Cabinet;
-
 
 use App\Entity\Adverts\Advert\Advert;
 use App\Http\Controllers\Controller;
 use App\UseCases\Adverts\FavoriteService;
+use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
     private $service;
 
-    public function __controller(FavoriteService $service)
+    public function __construct(FavoriteService $service)
     {
         $this->service = $service;
         $this->middleware('auth');
@@ -20,7 +19,7 @@ class FavoriteController extends Controller
 
     public function index()
     {
-        $adverts = Advert::favoredByUser(Auth::user()->orderByDesc('id')->paginate(20));
+        $adverts = Advert::favoredByUser(Auth::user())->orderByDesc('id')->paginate(20);
 
         return view('cabinet.favorites.index', compact('adverts'));
     }
@@ -29,8 +28,8 @@ class FavoriteController extends Controller
     {
         try {
             $this->service->remove(Auth::id(), $advert->id);
-        } catch (\DomainException $exception) {
-            return back()->with('error', $exception->getMessage());
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
         }
 
         return redirect()->route('cabinet.favorites.index');
