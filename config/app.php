@@ -146,7 +146,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        App\Providers\SearchServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -162,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\SmsServiceProvider::class,
         App\Providers\CacheServiceProvider::class,
+        App\Providers\SearchServiceProvider::class,
 
     ],
 

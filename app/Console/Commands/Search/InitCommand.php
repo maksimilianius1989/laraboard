@@ -1,12 +1,12 @@
 <?php
 
-
 namespace App\Console\Commands\Search;
 
-
-use Elasticsearch\Client;
+use App\Entity\Adverts\Advert\Advert;
+use App\Services\Search\AdvertIndexer;
 use Elasticsearch\Common\Exceptions\Missing404Exception;
 use Illuminate\Console\Command;
+use Elasticsearch\Client;
 
 class InitCommand extends Command
 {
@@ -19,12 +19,12 @@ class InitCommand extends Command
         parent::__construct();
         $this->client = $client;
     }
-
+    
     public function handle(): bool
     {
         try {
             $this->client->indices()->delete([
-                'index' => 'app',
+                'index' => 'app'
             ]);
         } catch (Missing404Exception $e) {}
 
@@ -65,7 +65,7 @@ class InitCommand extends Command
                                 'type' => 'nested',
                                 'properties' => [
                                     'attribute' => [
-                                        'type' => 'integer',
+                                        'type' => 'integer'
                                     ],
                                     'value_string' => [
                                         'type' => 'keyword',
@@ -84,7 +84,7 @@ class InitCommand extends Command
                             'replace' => [
                                 'type' => 'mapping',
                                 'mappings' => [
-                                    '&=> and',
+                                    '&=> and '
                                 ],
                             ],
                         ],
@@ -101,7 +101,7 @@ class InitCommand extends Command
                             ],
                             'trigrams' => [
                                 'type' => 'ngram',
-                                'nin_gram' => 4,
+                                'min_gram' => 4,
                                 'max_gram' => 6,
                             ],
                         ],

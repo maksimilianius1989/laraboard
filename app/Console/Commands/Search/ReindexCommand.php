@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Console\Commands\Search;
-
 
 use App\Entity\Adverts\Advert\Advert;
 use App\Services\Search\AdvertIndexer;
@@ -19,7 +17,7 @@ class ReindexCommand extends Command
         parent::__construct();
         $this->indexer = $indexer;
     }
-
+    
     public function handle(): bool
     {
         $this->indexer->clear();
