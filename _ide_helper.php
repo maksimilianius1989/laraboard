@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.29 on 2018-08-03 16:47:51.
+ * Generated for Laravel 5.6.33 on 2018-08-13 18:54:20.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -2981,29 +2981,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flush()
         {
-            return \Illuminate\Cache\FileStore::flush();
-        }
-        
-        /**
-         * Get the Filesystem instance.
-         *
-         * @return \Illuminate\Filesystem\Filesystem 
-         * @static 
-         */ 
-        public static function getFilesystem()
-        {
-            return \Illuminate\Cache\FileStore::getFilesystem();
-        }
-        
-        /**
-         * Get the working directory of the cache.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getDirectory()
-        {
-            return \Illuminate\Cache\FileStore::getDirectory();
+            return \Illuminate\Cache\ArrayStore::flush();
         }
         
         /**
@@ -3014,7 +2992,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getPrefix()
         {
-            return \Illuminate\Cache\FileStore::getPrefix();
+            return \Illuminate\Cache\ArrayStore::getPrefix();
         }
          
     }
@@ -4912,6 +4890,18 @@ namespace Illuminate\Support\Facades {
         public static function deleteDirectory($directory, $preserve = false)
         {
             return \Illuminate\Filesystem\Filesystem::deleteDirectory($directory, $preserve);
+        }
+        
+        /**
+         * Remove all of the directories within a given directory.
+         *
+         * @param string $directory
+         * @return bool 
+         * @static 
+         */ 
+        public static function deleteDirectories($directory)
+        {
+            return \Illuminate\Filesystem\Filesystem::deleteDirectories($directory);
         }
         
         /**
@@ -9282,6 +9272,20 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Add a route to the underlying route collection.
+         *
+         * @param array|string $methods
+         * @param string $uri
+         * @param \Closure|array|string|null $action
+         * @return \Illuminate\Routing\Route 
+         * @static 
+         */ 
+        public static function addRoute($methods, $uri, $action)
+        {
+            return \Illuminate\Routing\Router::addRoute($methods, $uri, $action);
+        }
+        
+        /**
          * Return the response returned by the given route.
          *
          * @param string $name
@@ -13482,7 +13486,7 @@ namespace  {
              *
              * @param mixed $id
              * @param array $columns
-             * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection 
+             * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|static|static[] 
              * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
              * @static 
              */ 
@@ -13633,7 +13637,7 @@ namespace  {
              *
              * @param int $count
              * @param callable $callback
-             * @param string $column
+             * @param string|null $column
              * @param string|null $alias
              * @return bool 
              * @static 
@@ -13906,7 +13910,7 @@ namespace  {
              * @param mixed $value
              * @param callable $callback
              * @param callable $default
-             * @return mixed 
+             * @return mixed|$this 
              * @static 
              */ 
             public static function when($value, $callback, $default = null)
@@ -13932,7 +13936,7 @@ namespace  {
              * @param mixed $value
              * @param callable $callback
              * @param callable $default
-             * @return mixed 
+             * @return mixed|$this 
              * @static 
              */ 
             public static function unless($value, $callback, $default = null)

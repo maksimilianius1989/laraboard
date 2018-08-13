@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-08-03 16:47:53.
+    * Generated on 2018-08-13 18:54:23.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -42,6 +42,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -181,6 +182,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -320,6 +322,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -459,6 +462,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -598,6 +602,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -737,6 +742,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
@@ -876,6 +882,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
